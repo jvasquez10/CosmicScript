@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CosmicScript</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animista/1.0.0/animista.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .logo-container img {
+        margin-right: 15px;
+      }
+
+      .keyword {
+        color: #4caf50;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800 text-white flex flex-col h-screen">
+    <div
+      class="logo-container animate__animated animate__rotate-vert-center slide-in-blurred-top"
+    ></div>
+
+    <div class="flex-grow flex flex-col p-4">
+      <div class="flex items-center justify-between space-x-4 mb-4">
+        <div
+          class="flex items-center justify-between space-x-4 mb-4 slide-in-blurred-left"
+        >
+          <!-- Botones de acción -->
+          <div
+            title="Cargar archivo"
+            class="tooltip"
+            onclick="document.getElementById('fileInput').click();"
+          >
+            <input
+              type="file"
+              id="fileInput"
+              style="display: none;"
+              onchange="loadFile(event)"
+            />
+            <link
+              href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet"
+            />
+            <span
+              class="material-icons text-gray-400 hover:text-white cursor-pointer"
+            >
+              folder_open
+            </span>
+          </div>
+          <div title="Guardar archivo" class="tooltip" onclick="saveFile();">
+            <link
+              href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet"
+            />
+            <span
+              class="material-icons text-gray-400 hover:text-white cursor-pointer"
+            >
+              save
+            </span>
+          </div>
+          <div title="Análisis Sintáctico" class="tooltip cursor-pointer">
+            <link
+              href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet"
+            />
+            <span
+              class="material-icons text-gray-400 hover:text-white cursor-pointer"
+            >
+              auto_fix_normal
+            </span>
+          </div>
+          <div title="Análisis Léxico" class="tooltip cursor-pointer">
+            <link
+              href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet"
+            />
+            <span
+              class="material-icons text-gray-400 hover:text-white cursor-pointer"
+            >
+              spellcheck
+            </span>
+          </div>
+          <div title="Análisis Semántico" class="tooltip cursor-pointer">
+            <link
+              href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet"
+            />
+            <span
+              class="material-icons text-gray-400 hover:text-white cursor-pointer"
+            >
+              psychology
+            </span>
+          </div>
+          <div
+            title="Limpiar"
+            class="tooltip cursor-pointer"
+            onclick="clearEditor();"
+          >
+            <link
+              href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet"
+            />
+            <span
+              class="material-icons text-gray-400 hover:text-white cursor-pointer"
+            >
+              delete_outline
+            </span>
+          </div>
+        </div>
+
+        <div class="logo-container slide-in-blurred-right">
+          <img src=".vscode\imagenes\cosmic.png" alt="Logo" class="h-16" />
+          <h1 class="text-xl">CosmicScript</h1>
+        </div>
+      </div>
+
+      <div class="editor-container flex-grow">
+        <pre class="line-numbers"></pre>
+        <textarea
+          id="editor"
+          class="editor w-full"
+          oninput="updateLineNumbers()"
+        ></textarea>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      const loadFile = (event) => {
+        const input = event.target;
+        const reader = new FileReader();
+        reader.onload = function () {
+          const text = reader.result;
+          document.getElementById("editor").value = text;
+          updateLineNumbers();
+        };
+        reader.readAsText(input.files[0]);
+      };
+
+      const saveFile = () => {
+        const text = document.getElementById("editor").value;
+        const blob = new Blob([text], { type: "text/plain" });
+        const anchor = document.createElement("a");
+        anchor.download = "Texto.cosmic";
+        anchor.href = window.URL.createObjectURL(blob);
+        anchor.click();
+        window.URL.revokeObjectURL(anchor.href);
+      };
+
+      const clearEditor = () => {
+        document.getElementById("editor").value = "";
+        updateLineNumbers();
+      };
+    </script>
+  </body>
+</html>
