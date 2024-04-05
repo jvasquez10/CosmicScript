@@ -7,7 +7,7 @@ El diseño de este nuevo lenguaje de programación se basa en nombres extraídos
 
 Somos Estudiantes de la Universidad Mariano Galvez de la sede Portales los dias Sabados del septimo semestre seccion B.
 
-JOSE PABLO VASQUEZ SAZO  9989-16-16867
+9989-16-16867 JOSE PABLO VASQUEZ SAZO  
 
 JUAN MIGUEL PEREZ MURALLES
 
