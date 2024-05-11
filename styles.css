@@ -1,0 +1,176 @@
+body {
+    background-color: #10254e;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.tokens-container, .errores-container {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+.tokens-container h2, .errores-container h2 {
+    margin-bottom: 10px;
+}
+
+.output {
+    margin-bottom: 5px;
+}
+
+.token {
+    color: blue;
+}
+
+.error {
+    color: red;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+textarea {
+    width: calc(100% - 20px);
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+button:hover {
+    filter: brightness(90%);
+}
+
+.green-button {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.red-button {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.blue-button {
+    background-color: #007bff;
+    color: #fff;
+}
+
+
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Ajusta el tamaño según sea necesario */
+}
+/* Agregar animaciones para la entrada del logo */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animated-logo {
+    animation: slideInFromLeft 1s ease-out; /* Configura la animación */
+  }
+  
+
+  
+/* Estilos para los números de línea */
+/* Estilos para los números de línea */
+.line-numbers {
+    display: flex;
+  }
+
+  .line-number {
+    width: 50px; /* Ajusta el ancho según tus necesidades */
+    padding: 10px;
+    background-color: #f0f0f0; /* Opcional: puedes darle un color de fondo */
+  }
+
+  .input-text {
+    flex: 1; /* Esto hará que el textarea ocupe todo el espacio restante */
+    padding: 10px;
+  }
+
+  
