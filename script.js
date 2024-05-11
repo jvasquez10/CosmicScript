@@ -248,8 +248,8 @@ function cargarArchivo() {
       if (file) {
         // Verifica la extensión del archivo
         const extension = file.name.split('.').pop().toLowerCase()
-        if (extension !== 'cosmic') {
-          throw new Error('Error: El archivo debe tener la extensión .cosmic')
+        if (extension !== 'cbj') {
+          throw new Error('Error: El archivo debe tener la extensión .cbj')
         }
 
         const reader = new FileReader()
