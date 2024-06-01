@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CosmicScript UMG</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <img src="img/cosmic.png" alt="Logo" class="logo animated-logo" />
-      <h1>CosmicScript</h1>
-      <div class="line-numbers">
-        <div id="line-number" class="line-number"></div>
-        <textarea
-          id="input-text"
-          class="input-text"
-          placeholder="Ingrese su código aquí..."
-        ></textarea>
-      </div>
-      <button class="green-button" onclick="analizar()">
-        <i class="fas fa-play"></i> Analisis Lexico
-      </button>
-      <button class="red-button" onclick="limpiarTodo()">
-        <i class="fas fa-trash"></i> Limpiar
-      </button>
-
-      <input
-        type="file"
-        id="file-input"
-        accept=".cbj"
-        style="display: none;"
-      />
-      <button class="blue-button" onclick="cargarArchivo()">
-        <i class="fas fa-file-upload"></i> Cargar Archivo
-      </button>
-      <div class="tokens-container">
-        <h2>Tokens Encontrados</h2>
-        <div id="output-tokens" class="output"></div>
-      </div>
-      <div class="errores-container">
-        <h2>Errores Léxicos</h2>
-        <div id="output-errores" class="output"></div>
-      </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CosmicScript</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </head>
+    
+<body>
+    <h1><img src="img/cosmic.png" alt="Logo"> COSMICSCRIPT</h1>
+    <textarea id="codeInput" rows="10" cols="50" placeholder="Ingrese su código aquí..."></textarea>
+    
+    <div class="buttons">
+        <button id="open-btn" class="button blue">
+            <i class="fas fa-folder-open"></i> Cargar Archivo
+        </button>
+        <button id="save-btn" class="button yellow">
+            <i class="fas fa-save"></i> Guardar
+        </button>
+        <button id="delete-btn" class="button red">
+            <i class="fas fa-trash"></i> Borrar
+        </button>
+        <button onclick="analyzeCode()">Analizar Código</button>
     </div>
+
+    <h2>Tabla de Tokens</h2>
+    <table id="tokensTable">
+        <thead>
+            <tr>
+                <th>Lexema</th>
+                <th>Tipo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Resultados de tokens aquí -->
+        </tbody>
+    </table>
+
+    <h2>Tabla de Errores</h2>
+    <table id="errorsTable">
+        <thead>
+            <tr>
+                <th>Error</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Resultados de errores aquí -->
+        </tbody>
+    </table>
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
